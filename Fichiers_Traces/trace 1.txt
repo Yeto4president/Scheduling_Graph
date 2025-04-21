@@ -1,0 +1,75 @@
+ ____  _                                      
+| __ )(_) ___ _ ____   _____ _ __  _   _  ___ 
+|  _ \| |/ _ \ '_ \ \ / / _ \ '_ \| | | |/ _ \
+| |_) | |  __/ | | \ V /  __/ | | | |_| |  __/
+|____/|_|\___|_| |_|\_/ \___|_| |_|\__,_|\___|
+                                              
+
+Quel fichier voulez-vous analyser ? (Saisir -1 pour quitter)
+
+Lecture du fichier : Fichiers_Tests/table 1.txt
+1. Affichage de la matrice des valeurs :
++----+---+---+---+---+---+---+---+---+---+---+----+----+----+----+---+
+| \  | α | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | ω |
++----+---+---+---+---+---+---+---+---+---+---+----+----+----+----+---+
+| α  | - | 0 | 0 | - | - | - | - | - | - | - | -  | -  | -  | -  | - |
+| 1  | - | - | - | 2 | - | - | - | - | - | - | -  | -  | -  | -  | - |
+| 2  | - | - | - | - | 5 | - | - | - | - | - | -  | -  | -  | -  | - |
+| 3  | - | - | - | - | 4 | - | - | - | - | - | -  | -  | 4  | -  | - |
+| 4  | - | - | - | - | - | 2 | - | - | - | - | -  | 2  | -  | -  | - |
+| 5  | - | - | - | - | - | - | 5 | - | - | - | -  | -  | -  | -  | - |
+| 6  | - | - | - | - | - | - | - | 5 | - | - | -  | -  | -  | 5  | - |
+| 7  | - | - | - | - | - | - | - | - | 9 | - | -  | -  | -  | -  | - |
+| 8  | - | - | - | - | - | - | - | - | - | 2 | -  | -  | -  | -  | - |
+| 9  | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | -  | 5 |
+| 10 | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | -  | 1 |
+| 11 | - | - | - | - | - | - | - | - | - | - | 1  | -  | -  | -  | - |
+| 12 | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | 1  | - |
+| 13 | - | - | - | - | 9 | - | - | - | - | - | -  | -  | -  | -  | - |
+| ω  | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | -  | - |
++----+---+---+---+---+---+---+---+---+---+---+----+----+----+----+---+
+
+2. Affichage du graphe comme un jeu de triplets :
+ Création du graphe d’ordonnancement :
+15 sommets
+18 arcs
+0 -> 1 = 0
+0 -> 2 = 0
+1 -> 3 = 2
+2 -> 4 = 5
+3 -> 4 = 4
+3 -> 12 = 4
+4 -> 5 = 2
+4 -> 11 = 2
+5 -> 6 = 5
+6 -> 7 = 5
+6 -> 13 = 5
+7 -> 8 = 9
+8 -> 9 = 2
+9 -> 14 = 5
+10 -> 14 = 1
+11 -> 10 = 1
+12 -> 13 = 1
+13 -> 4 = 9
+
+3. Vérification des points d'entrée et de sortie, et détection de circuit :
+>> Points d'entrée et de sortie :
+Il y a un seul point d’entrée : 0
+Il y a un seul point de sortie : 14
+
+>> Détection de circuit (méthode d’élimination des points d’entrée) :
+Points d’entrée (Itération 1) : 0
+Suppression des points d’entrée.
+Sommets restants : 1 2 3 4 5 6 7 8 9 10 11 12 13 14
+Points d’entrée (Itération 2) : 1 2
+Suppression des points d’entrée.
+Sommets restants : 3 4 5 6 7 8 9 10 11 12 13 14
+Points d’entrée (Itération 3) : 3
+Suppression des points d’entrée.
+Sommets restants : 4 5 6 7 8 9 10 11 12 13 14
+Points d’entrée (Itération 4) : 12
+Suppression des points d’entrée.
+Sommets restants : 4 5 6 7 8 9 10 11 13 14
+Aucun point d'entrée trouvé alors que des sommets restent.
+-> ERREUR : Circuit détecté. Ordonnancement impossible !
+

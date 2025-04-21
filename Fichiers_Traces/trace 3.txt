@@ -1,0 +1,244 @@
+ ____  _                                      
+| __ )(_) ___ _ ____   _____ _ __  _   _  ___ 
+|  _ \| |/ _ \ '_ \ \ / / _ \ '_ \| | | |/ _ \
+| |_) | |  __/ | | \ V /  __/ | | | |_| |  __/
+|____/|_|\___|_| |_|\_/ \___|_| |_|\__,_|\___|
+                                              
+
+Quel fichier voulez-vous analyser ? (Saisir -1 pour quitter)
+
+Lecture du fichier : Fichiers_Tests/table 3.txt
+1. Affichage de la matrice des valeurs :
++----+---+---+---+---+---+---+---+---+---+---+----+----+----+---+
+| \  | α | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | ω |
++----+---+---+---+---+---+---+---+---+---+---+----+----+----+---+
+| α  | - | 0 | 0 | - | - | - | - | - | - | - | -  | -  | -  | - |
+| 1  | - | - | - | 2 | - | - | - | - | - | - | -  | -  | -  | - |
+| 2  | - | - | - | 5 | 5 | - | - | - | - | - | -  | -  | -  | - |
+| 3  | - | - | - | - | - | - | - | - | - | - | -  | -  | 4  | - |
+| 4  | - | - | - | 2 | - | 2 | - | - | 2 | - | -  | 2  | -  | - |
+| 5  | - | - | - | - | - | - | 5 | - | - | 5 | -  | -  | -  | - |
+| 6  | - | - | - | - | - | - | - | 5 | 5 | 5 | -  | -  | -  | - |
+| 7  | - | - | - | - | - | - | - | - | 9 | 9 | -  | -  | -  | - |
+| 8  | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | 1 |
+| 9  | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | 5 |
+| 10 | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | 9 |
+| 11 | - | - | - | - | - | - | - | - | - | - | 1  | -  | -  | - |
+| 12 | - | - | - | - | - | - | - | - | 1 | - | -  | -  | -  | - |
+| ω  | - | - | - | - | - | - | - | - | - | - | -  | -  | -  | - |
++----+---+---+---+---+---+---+---+---+---+---+----+----+----+---+
+
+2. Affichage du graphe comme un jeu de triplets :
+ Création du graphe d’ordonnancement :
+14 sommets
+22 arcs
+0 -> 1 = 0
+0 -> 2 = 0
+1 -> 3 = 2
+2 -> 3 = 5
+2 -> 4 = 5
+3 -> 12 = 4
+4 -> 3 = 2
+4 -> 5 = 2
+4 -> 8 = 2
+4 -> 11 = 2
+5 -> 6 = 5
+5 -> 9 = 5
+6 -> 7 = 5
+6 -> 8 = 5
+6 -> 9 = 5
+7 -> 8 = 9
+7 -> 9 = 9
+8 -> 13 = 1
+9 -> 13 = 5
+10 -> 13 = 9
+11 -> 10 = 1
+12 -> 8 = 1
+
+3. Vérification des points d'entrée et de sortie, et détection de circuit :
+>> Points d'entrée et de sortie :
+Il y a un seul point d’entrée : 0
+Il y a un seul point de sortie : 13
+
+>> Détection de circuit (méthode d’élimination des points d’entrée) :
+Points d’entrée (Itération 1) : 0
+Suppression des points d’entrée.
+Sommets restants : 1 2 3 4 5 6 7 8 9 10 11 12 13
+Points d’entrée (Itération 2) : 1 2
+Suppression des points d’entrée.
+Sommets restants : 3 4 5 6 7 8 9 10 11 12 13
+Points d’entrée (Itération 3) : 4
+Suppression des points d’entrée.
+Sommets restants : 3 5 6 7 8 9 10 11 12 13
+Points d’entrée (Itération 4) : 3 5 11
+Suppression des points d’entrée.
+Sommets restants : 6 7 8 9 10 12 13
+Points d’entrée (Itération 5) : 6 10 12
+Suppression des points d’entrée.
+Sommets restants : 7 8 9 13
+Points d’entrée (Itération 6) : 7
+Suppression des points d’entrée.
+Sommets restants : 8 9 13
+Points d’entrée (Itération 7) : 8 9
+Suppression des points d’entrée.
+Sommets restants : 13
+Points d’entrée (Itération 8) : 13
+Suppression des points d’entrée.
+Sommets restants : Aucun
+-> Aucun circuit détecté.
+
+4. Calcul détaillé des rangs des sommets :
+>> Calcul des rangs des sommets :
+Recherche des sommets de rang 0 ...
+Sommets éliminés au rang 0 : { α }
+Recherche des sommets de rang 1 ...
+Sommets éliminés au rang 1 : { 1 2 }
+Recherche des sommets de rang 2 ...
+Sommets éliminés au rang 2 : { 4 }
+Recherche des sommets de rang 3 ...
+Sommets éliminés au rang 3 : { 3 5 11 }
+Recherche des sommets de rang 4 ...
+Sommets éliminés au rang 4 : { 6 10 12 }
+Recherche des sommets de rang 5 ...
+Sommets éliminés au rang 5 : { 7 }
+Recherche des sommets de rang 6 ...
+Sommets éliminés au rang 6 : { 8 9 }
+Recherche des sommets de rang 7 ...
+Sommets éliminés au rang 7 : { ω }
+>> Calcul des rangs terminé.
+
+5. Calcul du calendrier au plus tôt, au plus tard et des marges :
+>> Calcul du calendrier au plus tôt :
+Sommet 0 (entrée/sortie) : durée fixée à 0
+Sommet 1 : durée = 2
+Sommet 2 : durée = 5
+Sommet 4 : durée = 2
+Sommet 3 : durée = 4
+Sommet 5 : durée = 5
+Sommet 11 : durée = 1
+Sommet 6 : durée = 5
+Sommet 10 : durée = 9
+Sommet 12 : durée = 1
+Sommet 7 : durée = 9
+Sommet 8 : durée = 1
+Sommet 9 : durée = 5
+Sommet 13 (entrée/sortie) : durée fixée à 0
+Pour le sommet 0, prédécesseurs : []
+Pour le sommet 1, prédécesseurs : [0]
+Pour le sommet 2, prédécesseurs : [0]
+Pour le sommet 4, prédécesseurs : [2]
+Pour le sommet 3, prédécesseurs : [1, 2, 4]
+Pour le sommet 5, prédécesseurs : [4]
+Pour le sommet 11, prédécesseurs : [4]
+Pour le sommet 6, prédécesseurs : [5]
+Pour le sommet 10, prédécesseurs : [11]
+Pour le sommet 12, prédécesseurs : [3]
+Pour le sommet 7, prédécesseurs : [6]
+Pour le sommet 8, prédécesseurs : [4, 6, 7, 12]
+Pour le sommet 9, prédécesseurs : [5, 6, 7]
+Pour le sommet 13, prédécesseurs : [8, 9, 10]
+Sommet 0 n'a pas de prédécesseur -> date = 0
+Pour le sommet 1, prédécesseur 0 -> date = 0
+Pour le sommet 2, prédécesseur 0 -> date = 0
+Pour le sommet 4, prédécesseur 2 -> date = 5
+Pour le sommet 3, prédécesseur 1 -> date = 2
+Pour le sommet 3, prédécesseur 2 -> date = 5
+Pour le sommet 3, prédécesseur 4 -> date = 7
+Pour le sommet 5, prédécesseur 4 -> date = 7
+Pour le sommet 11, prédécesseur 4 -> date = 7
+Pour le sommet 6, prédécesseur 5 -> date = 12
+Pour le sommet 10, prédécesseur 11 -> date = 8
+Pour le sommet 12, prédécesseur 3 -> date = 11
+Pour le sommet 7, prédécesseur 6 -> date = 17
+Pour le sommet 8, prédécesseur 4 -> date = 7
+Pour le sommet 8, prédécesseur 6 -> date = 17
+Pour le sommet 8, prédécesseur 7 -> date = 26
+Pour le sommet 8, prédécesseur 12 -> date = 12
+Pour le sommet 9, prédécesseur 5 -> date = 12
+Pour le sommet 9, prédécesseur 6 -> date = 17
+Pour le sommet 9, prédécesseur 7 -> date = 26
+Pour le sommet 13, prédécesseur 8 -> date = 27
+Pour le sommet 13, prédécesseur 9 -> date = 31
+Pour le sommet 13, prédécesseur 10 -> date = 17
+>> Calendrier au plus tôt calculé.
+
+>> Calcul du calendrier au plus tard :
+Pour le sommet 0, successeurs : [1, 2]
+Pour le sommet 1, successeurs : [3]
+Pour le sommet 2, successeurs : [3, 4]
+Pour le sommet 4, successeurs : [3, 5, 8, 11]
+Pour le sommet 3, successeurs : [12]
+Pour le sommet 5, successeurs : [6, 9]
+Pour le sommet 11, successeurs : [10]
+Pour le sommet 6, successeurs : [7, 8, 9]
+Pour le sommet 10, successeurs : [13]
+Pour le sommet 12, successeurs : [8]
+Pour le sommet 7, successeurs : [8, 9]
+Pour le sommet 8, successeurs : [13]
+Pour le sommet 9, successeurs : [13]
+Pour le sommet 13, successeurs : []
+Pour le sommet de sortie, date au plus tard fixée à 31
+Pour le sommet 9, avec successeur 13 -> date = 26
+Pour le sommet 8, avec successeur 13 -> date = 30
+Pour le sommet 7, avec successeur 8 -> date = 21
+Pour le sommet 7, avec successeur 9 -> date = 17
+Pour le sommet 12, avec successeur 8 -> date = 29
+Pour le sommet 10, avec successeur 13 -> date = 22
+Pour le sommet 6, avec successeur 7 -> date = 12
+Pour le sommet 6, avec successeur 8 -> date = 25
+Pour le sommet 6, avec successeur 9 -> date = 21
+Pour le sommet 11, avec successeur 10 -> date = 21
+Pour le sommet 5, avec successeur 6 -> date = 7
+Pour le sommet 5, avec successeur 9 -> date = 21
+Pour le sommet 3, avec successeur 12 -> date = 25
+Pour le sommet 4, avec successeur 3 -> date = 23
+Pour le sommet 4, avec successeur 5 -> date = 5
+Pour le sommet 4, avec successeur 8 -> date = 28
+Pour le sommet 4, avec successeur 11 -> date = 19
+Pour le sommet 2, avec successeur 3 -> date = 20
+Pour le sommet 2, avec successeur 4 -> date = 0
+Pour le sommet 1, avec successeur 3 -> date = 23
+Pour le sommet 0, avec successeur 1 -> date = 23
+Pour le sommet 0, avec successeur 2 -> date = 0
+>> Calendrier au plus tard calculé.
+
+>> Calcul des marges :
+Pour le sommet 0 : marge = 0
+Pour le sommet 1 : marge = 23
+Pour le sommet 2 : marge = 0
+Pour le sommet 4 : marge = 0
+Pour le sommet 3 : marge = 18
+Pour le sommet 5 : marge = 0
+Pour le sommet 11 : marge = 14
+Pour le sommet 6 : marge = 0
+Pour le sommet 10 : marge = 14
+Pour le sommet 12 : marge = 18
+Pour le sommet 7 : marge = 0
+Pour le sommet 8 : marge = 4
+Pour le sommet 9 : marge = 0
+Pour le sommet 13 : marge = 0
+>> Marges calculées.
+
+6. Calcul et affichage du(s) chemin(s) critique(s) :
+Chemin(s) critique(s) : [0, 2, 4, 5, 6, 7, 9, 13]
+
+7. Affichage final des résultats :
+>> Affichage final du tableau récapitulatif :
++-------+-----------------------+---------------+-----------------+------------------+---------------+-----------------+-------------------+-------+
+| Rangs | Tâches et sa longueur | Prédécesseurs | Dates par préd. | Date au plus tôt |  Successeurs  | Dates par succ. | Date au plus tard | Marge |
++-------+-----------------------+---------------+-----------------+------------------+---------------+-----------------+-------------------+-------+
+|   0   |         [0, 0]        |       []      |       [0]       |        0         |     [1, 2]    |     [23, 0]     |         0         |   0   |
+|   1   |         [1, 2]        |      [0]      |       [0]       |        0         |      [3]      |       [23]      |         23        |   23  |
+|   1   |         [2, 5]        |      [0]      |       [0]       |        0         |     [3, 4]    |     [20, 0]     |         0         |   0   |
+|   2   |         [4, 2]        |      [2]      |       [5]       |        5         | [3, 5, 8, 11] | [23, 5, 28, 19] |         5         |   0   |
+|   3   |         [3, 4]        |   [1, 2, 4]   |    [2, 5, 7]    |        7         |      [12]     |       [25]      |         25        |   18  |
+|   3   |         [5, 5]        |      [4]      |       [7]       |        7         |     [6, 9]    |     [7, 21]     |         7         |   0   |
+|   3   |        [11, 1]        |      [4]      |       [7]       |        7         |      [10]     |       [21]      |         21        |   14  |
+|   4   |         [6, 5]        |      [5]      |       [12]      |        12        |   [7, 8, 9]   |   [12, 25, 21]  |         12        |   0   |
+|   4   |        [10, 9]        |      [11]     |       [8]       |        8         |      [13]     |       [22]      |         22        |   14  |
+|   4   |        [12, 1]        |      [3]      |       [11]      |        11        |      [8]      |       [29]      |         29        |   18  |
+|   5   |         [7, 9]        |      [6]      |       [17]      |        17        |     [8, 9]    |     [21, 17]    |         17        |   0   |
+|   6   |         [8, 1]        | [4, 6, 7, 12] | [7, 17, 26, 12] |        26        |      [13]     |       [30]      |         30        |   4   |
+|   6   |         [9, 5]        |   [5, 6, 7]   |   [12, 17, 26]  |        26        |      [13]     |       [26]      |         26        |   0   |
+|   7   |        [13, 0]        |   [8, 9, 10]  |   [27, 31, 17]  |        31        |       []      |       [31]      |         31        |   0   |
++-------+-----------------------+---------------+-----------------+------------------+---------------+-----------------+-------------------+-------+
